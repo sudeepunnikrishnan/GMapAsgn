@@ -1,0 +1,19 @@
+//
+//  PrefixHeader.pch
+//  TrackYou
+//
+//  Created by Sudeep Unnikrishnan on 7/24/15.
+//  Copyright (c) 2015 Sudeep Unnikrishnan. All rights reserved.
+//
+
+#ifndef TrackYou_PrefixHeader_pch
+#define TrackYou_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+#endif
+#endif
