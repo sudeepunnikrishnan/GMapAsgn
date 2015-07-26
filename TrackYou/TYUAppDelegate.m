@@ -1,22 +1,37 @@
 //
-//  AppDelegate.m
+//  TYUAppDelegate.m
 //  TrackYou
 //
-//  Created by Sudeep Unnikrishnan on 7/26/15.
+//  Created by Sudeep Unnikrishnan on 7/23/15.
 //  Copyright (c) 2015 Sudeep Unnikrishnan. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "TYUAppDelegate.h"
+#import <GoogleMaps/GoogleMaps.h>
+#import "TYUViewController.h"
 
-@interface AppDelegate ()
+@interface TYUAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation TYUAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init]
+                                      forBarPosition:UIBarPositionAny
+                                          barMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+    TYUViewController *viewController = [navigationController viewControllers][0];
+    viewController.managedObjectContext = self.managedObjectContext;
+    
+    //Google provided key for maps from developer forum
+    [GMSServices provideAPIKey:@"AIzaSyCQFDA-Vi-X6njw0fP96180wxpBDB367Ac"];
     return YES;
 }
 
@@ -51,7 +66,7 @@
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
 - (NSURL *)applicationDocumentsDirectory {
-    // The directory the application uses to store the Core Data store file. This code uses a directory named "com.su.trackyou.TrackYou" in the application's documents directory.
+    // The directory the application uses to store the Core Data store file. This code uses a directory named "com.su.TrackYou" in the application's documents directory.
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 

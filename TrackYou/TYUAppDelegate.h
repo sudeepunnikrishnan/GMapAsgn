@@ -1,15 +1,16 @@
 //
-//  AppDelegate.h
+//  TYUAppDelegate.h
 //  TrackYou
 //
-//  Created by Sudeep Unnikrishnan on 7/26/15.
+//  Created by Sudeep Unnikrishnan on 7/23/15.
 //  Copyright (c) 2015 Sudeep Unnikrishnan. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+
+@interface TYUAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
